@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 import { imageData } from '../../assets/imageData';
 import ButtonContainer from '../container/ButtonContainer';
 import OptionContainer from '../container/OptionContainer';
 import HeaderComponent from '../container/HeaderComponent';
+import useCountdown from '../../library/hooks/useCountdown';
 
 function Quiz() {
   const [index, setIndex] = useState(0);
@@ -11,6 +12,8 @@ function Quiz() {
   const [answered, setAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setfinished] = useState(false);
+  const { timer, updateTimer, isTimerFinished, stopTimer } =
+    useCountdown(15000);
 
   const onNextClick = () => {
     if (answered && index < imageData.length - 1) {
@@ -18,6 +21,7 @@ function Quiz() {
       setIndex(newIndex);
       setCurrent(imageData[newIndex]);
       setAnswered(false);
+      updateTimer(15000);
 
       if (newIndex === imageData.length - 1) {
         setfinished(true);
@@ -47,8 +51,15 @@ function Quiz() {
       }
       setAnswered(true);
       setScore(prevScore => prevScore + 10);
+      stopTimer();
     }
   };
+
+  useEffect(() => {
+    if (isTimerFinished) {
+      setAnswered(true);
+    }
+  }, [isTimerFinished]);
 
   return (
     <div className='game__container'>
@@ -56,6 +67,7 @@ function Quiz() {
         index={index}
         score={score}
         length={imageData.length}
+        timer={timer}
       />
 
       <OptionContainer
