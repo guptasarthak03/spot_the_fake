@@ -52,7 +52,11 @@ function Quiz() {
 
   return (
     <div className='game__container'>
-      <HeaderComponent score={score} />
+      <HeaderComponent
+        index={index}
+        score={score}
+        length={imageData.length}
+      />
 
       <OptionContainer
         current={current}
