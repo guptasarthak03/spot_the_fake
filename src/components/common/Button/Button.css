@@ -1,0 +1,32 @@
+.btn {
+    color: #444;
+    border: none;
+    font-family: inherit;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.2s;
+  
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
+  
+    padding: 0.7rem 2.5rem;
+    border-radius: 50rem;
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn:active {
+      transform: translate(0%, 3px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    }
+    
+  
+  .btn--new {
+    top: 5vh;
+  }
+  
+  .btn--next {
+    top: 85vh;
+  }
+  
