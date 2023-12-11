@@ -1,0 +1,43 @@
+.option--container {
+  margin: 1rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.player {
+  padding: 0 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+  height: 100%;
+  border-radius: 9px;
+}
+
+.correct {
+  background-color: rgb(136 250 4 / 66%);   
+}
+.wrong {
+  background-color: rgb(172 41 16 / 82%);   
+}
+
+.title {
+  position: relative;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0.7rem 0;
+}
+
+.img_container{
+  height: 85%;
+}
+
+.player img {
+  border-radius: 6px;
+  height: 100%;
+  width: 100%;
+}
