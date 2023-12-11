@@ -43,14 +43,10 @@ function Quiz() {
       const imgPath = imgElement?.getAttribute('src');
 
       if (current.correct === imgPath) {
-        console.log('correct');
-        parentElement.classList.add('correct');
-      } else {
-        console.log('false');
-        parentElement.classList.add('wrong');
+        setScore(prevScore => prevScore + 10);
       }
+
       setAnswered(true);
-      setScore(prevScore => prevScore + 10);
       stopTimer();
     }
   };

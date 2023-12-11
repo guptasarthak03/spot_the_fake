@@ -3,23 +3,22 @@ import './optionContainer.css';
 import OptionElement from '../../OptionElement';
 
 function OptionContainer({ current, answered, handleClick }) {
+
+  const probability = Math.random() > 0.5;
+
   return (
     <div className='game__options'>
       <OptionElement
         onClickHandle={handleClick}
-        label='option 1'
-        imgPath={current.option1}
         current={current}
         answered={answered}
-        option='option1'
+        option={probability ? 'option1' : 'option2'}
       />
       <OptionElement
         onClickHandle={handleClick}
-        label='option 2'
-        imgPath={current.option2}
         current={current}
         answered={answered}
-        option='option2'
+        option={probability ? 'option2' : 'option1'}
       />
     </div>
   );

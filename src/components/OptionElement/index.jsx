@@ -18,7 +18,7 @@ function OptionElement({ imgPath, onClickHandle, current, answered, option }) {
         </h2>
         <div className='img_container'>
           <img
-            src={`${imgPath}`}
+            src={current[option]}
             alt='Option Choice'
           />
         </div>
